@@ -1,0 +1,42 @@
+﻿@model Store.Models.RegisterModel
+
+<h2>Registration</h2>
+
+<form asp-action="Register" asp-controller="Account" asp-anti-forgery="true">
+    <div class="register" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div>
+            <label asp-for="Name">Enter your name</label><br />
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name" />
+        </div>
+        <div>
+            <label asp-for="Surname">Enter your surname</label><br />
+            <input type="text" asp-for="Surname" />
+            <span asp-validation-for="Surname" />
+        </div>
+        <div>
+            <label asp-for="Number">Enter your phone number</label><br />
+            <input type="text" asp-for="Number" />
+            <span asp-validation-for="Number" />
+        </div>
+        <div>
+            <label asp-for="Email">Enter Email</label><br />
+            <input asp-for="Email" />
+            <span asp-validation-for="Email" />
+        </div>
+        <div>
+            <label asp-for="Password">Enter password</label><br />
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div>
+            <label asp-for="ConfirmPassword">Enter your password again</label><br />
+            <input asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword" />
+        </div>
+        <div>
+            <input type="submit" value="Registration" />
+        </div>
+    </div>
+</form>

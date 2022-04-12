@@ -1,0 +1,12 @@
+﻿@model Store.Domain.Core.Entities.User
+
+<h1>Name: @Model.Name</h1>
+<h1>Surname: @Model.Surname</h1>
+<h1>Phone number: @Model.PhoneNumber</h1>
+<h1>Email: @Model.Email</h1>
+
+
+@*<a asp-action="OrdersHistory" asp-controller="Order">Show my order history</a>*@
+
+<a asp-action="Edit" asp-controller="Account">Edit my profile</a>
+<a asp-action="EditPassword" asp-controller="Account">Change my password</a>

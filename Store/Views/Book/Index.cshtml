@@ -1,0 +1,54 @@
+﻿@model FilterViewModel
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h3>Book List</h3>
+    <form method="post" asp-controller="Book" asp-action="Index">
+
+        <select name="value">
+            <option value="0">All</option>
+            @foreach (var c in Model.Categories)
+            {
+
+                <option value="@c.Id"> @c.CategoryName</option>
+
+            }
+        </select>
+        <select name="sort">
+            <option value=0>Range by price</option>
+            <option value=1>From min to max</option>
+            <option value=2>From max to min</option>
+        </select>
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Buy</th>
+        </tr>
+        @foreach (var book in Model.Books)
+        {
+            <tr>
+                <td>@book.BookName</td>
+                <td>@book.Description</td>
+                <td><img src="~/images/book1.png" width="60" /> </td>
+                <td>@book.Price</td>
+                <td align="center">
+                    <a href="/cart/buy/@book.Id">Buy Now</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>
